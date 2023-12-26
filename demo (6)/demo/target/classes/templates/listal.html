@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>webapplication listall</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<h1>List</h1>
+<table>
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>username</th>
+        <th>password</th>
+        <th>options</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="use : ${users}">
+        <td th:text="${use.id}"></td>
+        <td th:text="${use.username}"></td>
+        <td th:text="${use.password}"></td>
+        <td>
+            <a th:href="@{/update/{id}(id=${use.id})}" class="btn btn-primary">Update</a>
+            <a th:href="@{/delete/{id}(id=${use.id})}" class="btn btn-danger">Delete</a>
+        </td>
+
+    </tr>
+    </tbody>
+
+</table>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

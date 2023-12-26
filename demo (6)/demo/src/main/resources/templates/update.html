@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9NaoOYz1ztcQTWFspd3YD65VohhpuuCOmLASjc"
+          crossorigin="anonymous">
+</head>
+<body>
+<form th:action="@{/saveUpdate}" method="post" th:object="${user}">
+
+    <div class="mb-3">
+
+        <input type="hidden" class="form-control" name="id" th:field="${user.id}">
+
+    </div>
+
+    <div class="mb-3">
+        <label for="username" class="form-label">username</label>
+        <input type="text" class="form-control" name="username" th:field="${user.username}">
+
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="text" class="form-control" name="password" th:field="${user.password}">
+    </div>
+
+    <input type="submit" value="save">
+</form>
+
+</body>
+</html>
